@@ -224,8 +224,6 @@ namespace TestorTheBarbarianDemo
     }
 
   
-
-  
     public class Enemy
     {
         public string Name { get; set; }
@@ -233,6 +231,7 @@ namespace TestorTheBarbarianDemo
         public int Strength { get; set; }
 
         public int Health { get; set; }
+
     }
 
     public interface iCharacter
