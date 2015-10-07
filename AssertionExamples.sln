@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestorTheBarbarianDemo", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestorShouldlyTests", "TestorShouldlyTests\TestorShouldlyTests.csproj", "{4A761463-5AD9-415F-9865-17B628C91038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestorFluentAssertionsTests", "TestorFluentAssertionsTests\TestorFluentAssertionsTests.csproj", "{51A3560E-FDE9-4DB6-A683-E9FEAC918067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4A761463-5AD9-415F-9865-17B628C91038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A761463-5AD9-415F-9865-17B628C91038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A761463-5AD9-415F-9865-17B628C91038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A3560E-FDE9-4DB6-A683-E9FEAC918067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A3560E-FDE9-4DB6-A683-E9FEAC918067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A3560E-FDE9-4DB6-A683-E9FEAC918067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A3560E-FDE9-4DB6-A683-E9FEAC918067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
