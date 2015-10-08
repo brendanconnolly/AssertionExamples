@@ -155,5 +155,75 @@ namespace TestorFluentAssertionsTests
            //    }
            //    do (es)not match.
         }
+
+        //collection.Should().Equal(1, 2, 5, 8);
+
+        //collection.Should().BeEquivalentTO(8, 2, 1, 5);
+        
+        //collection.Should().NotBeEquivalentTO(8, 2, 3, 5);
+
+        [Test]
+        public void listAscendingOrder_predicate_test()
+        {
+            var player1 = new Player("Joe Tester");
+            var teamMember1 = new TestorTheBarbarian() { Health=99};
+            var teamMember2 = new MasterCodo() { Health = 100 };
+
+            player1.Party.Add(teamMember1);
+            player1.Party.Add(teamMember2);
+            //to fail test
+            //teamMember2.Health = 0;
+
+            //Nunit does not have an equivalent either separate asserts or a boolean which 
+            // will loose detail and have a generic message 
+            //Assert.That(player1.Party.All(p => p.Health > 0), Is.True);
+
+            //FluentAssertions syntax
+            player1.Party.Should().BeInAscendingOrder(p => p.Health);
+            //-->Result Message: Expected collection {
+            //                TestorTheBarbarianDemo.TestorTheBarbarian
+            //                {
+            //                    ActiveWeapon = < null >
+            //                    Attacks = { "Clobber"}
+            //                    BattleCry = ""
+            //                    Health = 99
+            //                    Name = "Testor The Mighty Barbarian"
+            //                    Weapons = { "Fists Of Fury"}
+            //                }, 
+
+            //                   TestorTheBarbarianDemo.MasterCodo
+            //                {
+            //                    ActiveWeapon = < null >
+            //                    Attacks = { "Sling"}
+            //                    BattleCry = ""
+            //                    Health = 0
+            //                    Name = "Master Codo"
+            //                    Weapons = { "Fiery Fingers"}
+            //                }
+            //            }
+            //            to be ordered by "Health" and result in {
+
+            //                TestorTheBarbarianDemo.MasterCodo
+            //                {
+            //                    ActiveWeapon = < null >
+            //                    Attacks = { "Sling"}
+            //                    BattleCry = ""
+            //                    Health = 0
+            //                    Name = "Master Codo"
+            //                    Weapons = { "Fiery Fingers"}
+            //                }, 
+
+            //                TestorTheBarbarianDemo.TestorTheBarbarian
+            //                {
+            //                    ActiveWeapon = < null >
+            //                    Attacks = { "Clobber"}
+            //                    BattleCry = ""
+            //                    Health = 99
+            //                    Name = "Testor The Mighty Barbarian"
+            //                    Weapons = { "Fists Of Fury"}
+            //                }}.
+                        }
+
+
     }
 }

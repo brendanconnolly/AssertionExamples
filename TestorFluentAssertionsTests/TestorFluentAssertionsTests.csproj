@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="collectionTests.cs" />
+    <Compile Include="fluentAssertions_SpecialsTests.cs" />
     <Compile Include="stringComparisonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
