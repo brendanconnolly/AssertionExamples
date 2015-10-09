@@ -45,6 +45,43 @@ namespace TestorFluentAssertionsTests
             //             - Be strict about the order of items in byte arrays
         }
 
+        [Test]
+        public void typeValidation_Test()
+        {
+            iCharacter testor = new TestorTheBarbarian();
+
+            //to fail test
+            //testor = new MasterCodo();
+
+            //Nunit classic model
+            Assert.IsInstanceOf<TestorTheBarbarian>(testor);
+            //--> Result Message:	Expected: instance of < TestorTheBarbarianDemo.TestorTheBarbarian >
+            //       But was:  < TestorTheBarbarianDemo.MasterCodo >
+
+            //NUnit Constraint model
+            Assert.That(testor, Is.InstanceOf<TestorTheBarbarian>());
+            //--> Result Message:	Expected: instance of < TestorTheBarbarianDemo.TestorTheBarbarian >
+            //       But was:  < TestorTheBarbarianDemo.MasterCodo >
+
+            //FluentAssertions syntax
+            testor.Should().BeOfType<TestorTheBarbarian>();
+            //-->Result Message:	Expected type to be TestorTheBarbarianDemo.TestorTheBarbarian, 
+            //      but found TestorTheBarbarianDemo.MasterCodo.
+        }
+
+        [Test]
+        public void timedResult_Test()
+        {
+            var testor = new TestorTheBarbarian();
+            //set sleep to >1000 to fail test
+            const int sleepyTime = 500;
+
+            //nunit closest option MaxTime attribute on the test method. 
+            testor.ExecutionTimeOf(z => z.Rest(sleepyTime)).ShouldNotExceed(1.Seconds());
+
+            //-->Execution of (z.Rest(1500)) should not exceed 1s, but it required 1.698s
+
+        }
         //dates
     }
 }
